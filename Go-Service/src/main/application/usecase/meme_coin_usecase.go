@@ -42,9 +42,9 @@ func (u *MemeCoinUsecase) GetByID(ctx context.Context, req *DTO.GetMemeCoinReque
 		return DTO.GetMemeCoinResponseDTO{}, err
 	}
 	return DTO.GetMemeCoinResponseDTO{
-		Name:        memeCoin.Name,
-		Description: memeCoin.Description,
-		CreatedAt:   memeCoin.CreatedAt,
+		Name:            memeCoin.Name,
+		Description:     memeCoin.Description,
+		CreatedAt:       memeCoin.CreatedAt,
 		PopularityScore: memeCoin.PopularityScore,
 	}, nil
 }

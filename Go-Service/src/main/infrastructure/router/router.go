@@ -2,12 +2,12 @@ package router
 
 import (
 	"Go-Service/src/main/application/usecase"
+	domainLogger "Go-Service/src/main/domain/interface/logger"
 	"Go-Service/src/main/infrastructure/controller"
 	"Go-Service/src/main/infrastructure/middleware"
 	"Go-Service/src/main/infrastructure/repository"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/mongo"
-	domainLogger "Go-Service/src/main/domain/interface/logger"
 )
 
 func SetupRouter(r *gin.Engine, db *mongo.Database, logger domainLogger.Logger) {

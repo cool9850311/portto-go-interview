@@ -1,9 +1,9 @@
 package main
 
 import (
+	"Go-Service/src/main/infrastructure/initializer"
 	"Go-Service/src/main/infrastructure/router"
 	"github.com/gin-gonic/gin"
-	"Go-Service/src/main/infrastructure/initializer"
 )
 
 func main() {

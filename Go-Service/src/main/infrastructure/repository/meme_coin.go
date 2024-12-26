@@ -41,14 +41,14 @@ func (r *MemeCoinRepository) Create(ctx context.Context, memeCoin *entity.MemeCo
 
 func (r *MemeCoinRepository) GetByID(ctx context.Context, id string) (*entity.MemeCoin, error) {
 	var memeCoin entity.MemeCoin
-	
+
 	// Convert string ID to ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		r.logger.Error(ctx, "Invalid ID format")
 		return nil, err
 	}
-	
+
 	filter := bson.D{{"_id", objectID}}
 	err = r.collection.FindOne(ctx, filter).Decode(&memeCoin)
 	if err != nil {
@@ -68,7 +68,7 @@ func (r *MemeCoinRepository) Update(ctx context.Context, description string, id 
 		r.logger.Error(ctx, "Invalid ID format")
 		return err
 	}
-	
+
 	filter := bson.D{{"_id", objectID}}
 	update := bson.D{{"$set", bson.D{{"description", description}}}}
 	_, err = r.collection.UpdateOne(ctx, filter, update)
@@ -85,7 +85,7 @@ func (r *MemeCoinRepository) Delete(ctx context.Context, id string) error {
 		r.logger.Error(ctx, "Invalid ID format")
 		return err
 	}
-	
+
 	filter := bson.D{{"_id", objectID}}
 	_, err = r.collection.DeleteOne(ctx, filter)
 	if err != nil {
@@ -101,7 +101,7 @@ func (r *MemeCoinRepository) Poke(ctx context.Context, id string) error {
 		r.logger.Error(ctx, "Invalid ID format")
 		return err
 	}
-	
+
 	filter := bson.D{{"_id", objectID}}
 	update := bson.D{
 		{"$inc", bson.D{{"popularity_score", 1}}},

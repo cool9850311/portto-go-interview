@@ -10,7 +10,8 @@ import (
 )
 
 var AppConfig config.Config
-func LoadConfig(log logger.Logger) (error) {
+
+func LoadConfig(log logger.Logger) error {
 	projectRootPath, err := util.GetProjectRootPath()
 	if err != nil {
 		log.Fatal(context.Background(), "Error getting project root path: "+err.Error())

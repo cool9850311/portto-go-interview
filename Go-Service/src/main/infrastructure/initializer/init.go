@@ -1,18 +1,20 @@
 package initializer
 
-import (		
-	"go.mongodb.org/mongo-driver/mongo"
+import (
 	domainLogger "Go-Service/src/main/domain/interface/logger"
+	"Go-Service/src/main/infrastructure/config"
 	infraLogger "Go-Service/src/main/infrastructure/logger"
 	"context"
-	"time"
-	"log"
+	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"Go-Service/src/main/infrastructure/config"
+	"log"
+	"time"
 )
+
 var Client *mongo.Client
 var DB *mongo.Database
 var Log domainLogger.Logger
+
 func InitLog() {
 	var err error
 	Log, err = infraLogger.NewLogger("application.log")

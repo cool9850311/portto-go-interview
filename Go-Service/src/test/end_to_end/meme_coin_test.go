@@ -15,7 +15,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-
 func setupTestServer() *httptest.Server {
 	// Initialize the logger, config, and MongoDB client
 	initializer.InitLog()
