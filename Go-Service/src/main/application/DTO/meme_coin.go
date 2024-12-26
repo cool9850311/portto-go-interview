@@ -7,7 +7,7 @@ type CreateMemeCoinRequestDTO struct {
 	Description string `json:"description"`
 }
 
-type GetMemeCoinDTO struct {
+type GetMemeCoinRequestDTO struct {
 	ID string `json:"id" validate:"required"`
 }
 

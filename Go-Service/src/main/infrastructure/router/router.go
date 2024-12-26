@@ -25,5 +25,9 @@ func SetupRouter(r *gin.Engine, db *mongo.Database, logger domainLogger.Logger) 
 	memeCoinRoutes := api.Group("/meme-coin")
 	{
 		memeCoinRoutes.POST("/", memeCoinController.Create)
+		memeCoinRoutes.GET("/", memeCoinController.GetByID)
+		memeCoinRoutes.PUT("/", memeCoinController.Update)
+		memeCoinRoutes.DELETE("/", memeCoinController.Delete)
+		memeCoinRoutes.POST("/poke", memeCoinController.Poke)
 	}
 }
