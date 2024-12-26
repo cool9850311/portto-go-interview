@@ -11,6 +11,13 @@
 
 - [Go](https://golang.org/dl/)
 
+## Project structure
+
+- Using Clean Architecture, the project is divided into three layers:
+  - `domain`: the domain package (entity, interface, etc.)
+  - `infrastructure`: the infrastructure package (framework, library, etc.)
+  - `application`: the application package (usecase, DTO, etc.)
+
 ## Configuration
 
 1. copy .env.example to .env and fill in the values
